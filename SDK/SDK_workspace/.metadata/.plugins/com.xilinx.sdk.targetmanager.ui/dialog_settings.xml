@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="C:\materija\Ra174-2014\LPRS2\V3\SDK\SDK_workspace\V3_hw_platform\system.bit" key="V3_hw_platform-bitFile"/>
+	<item value="bootloop" key="V3_hw_platform-microblaze_0-initElf"/>
+	<item value="C:\materija\Ra174-2014\LPRS2\V3\SDK\SDK_workspace\V3_hw_platform\system_bd.bmm" key="V3_hw_platform-bmmFile"/>
+</section>
