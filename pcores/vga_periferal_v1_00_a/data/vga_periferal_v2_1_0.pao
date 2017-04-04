@@ -1,0 +1,17 @@
+##############################################################################
+## Filename:          C:/materija/Ra174-2014/LPRS2/V3/pcores/vga_periferal_v1_00_a/data/vga_periferal_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue Apr 04 07:58:07 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib vga_periferal_v1_00_a user_logic vhdl
+lib vga_periferal_v1_00_a vga_periferal vhdl
+lib vga_periferal_v1_00_a char_rom vhdl
+lib vga_periferal_v1_00_a graphic_mem vhdl
+lib vga_periferal_v1_00_a reg vhdl
+lib vga_periferal_v1_00_a text_mem vhdl
+lib vga_periferal_v1_00_a vga vhdl
+lib vga_periferal_v1_00_a vga_sync vhdl
+lib vga_periferal_v1_00_a vga_top vhdl

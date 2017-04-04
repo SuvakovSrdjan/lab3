@@ -44,3 +44,42 @@ If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx 
 11:57:14.510 INFO  - Clearing existing target manager status. 
 12:08:51.898 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 12:09:21.479 INFO  - System reset is completed. 
+12:18:30.737 WARN  - Terminating existing sessions on processor microblaze_0 
+12:18:31.879 INFO  - FPGA configured successfully with bitstream "C:/materija/Ra174-2014/LPRS2/V3/SDK/SDK_workspace/V3_hw_platform/download.bit" 
+12:18:39.633 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+12:18:41.539 ERROR - Unexpected error while launching program. java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(Unknown Source)
+
+12:19:02.309 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+12:19:03.909 ERROR - Unexpected error while launching program. java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(Unknown Source)
+
+12:19:16.233 WARN  - Terminating existing sessions on processor microblaze_0 
+12:19:42.257 WARN  - Terminating existing sessions on processor microblaze_0 
+12:20:08.030 WARN  - Terminating existing sessions on processor microblaze_0 
+12:20:37.032 WARN  - Terminating existing sessions on processor microblaze_0 
+12:20:45.862 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+12:20:58.304 INFO  - Processing command line option -hwspec C:\materija\Ra174-2014\LPRS2\V3\SDK\SDK_Export\hw\system.xml. 
+12:21:09.485 INFO  - FPGA configured successfully with bitstream "C:/materija/Ra174-2014/LPRS2/V3/SDK/SDK_workspace/V3_hw_platform/download.bit" 
+12:21:33.897 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+12:21:37.915 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+12:21:37.916 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+08:05:54.089 INFO  - Processing command line option -hwspec C:\materija\RA87-2014\LPRS2\Vezba3\Figure4\SDK\SDK_Export\hw\system.xml. 
+08:05:55.982 INFO  - The hardware specification for project 'V3_hw_platform' is different from C:\materija\RA87-2014\LPRS2\Vezba3\Figure4\SDK\SDK_Export\hw\system.xml. 
+08:05:56.202 INFO  - Copied contents of C:\materija\RA87-2014\LPRS2\Vezba3\Figure4\SDK\SDK_Export\hw\system.xml into \V3_hw_platform\system.xml. 
+08:05:56.215 INFO  - Copied contents of C:\materija\RA87-2014\LPRS2\Vezba3\Figure4\SDK\SDK_Export\hw\system.bit into \V3_hw_platform\system.bit. 
+08:05:56.221 INFO  - Copied contents of C:\materija\RA87-2014\LPRS2\Vezba3\Figure4\SDK\SDK_Export\hw\system_bd.bmm into \V3_hw_platform\system_bd.bmm. 
+08:05:57.740 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+08:05:59.746 INFO  - Updating hardware inferred compiler options for hello_world. 
+08:05:59.764 INFO  - Clearing existing target manager status. 
+08:33:16.984 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

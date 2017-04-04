@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\devl\synthesis\vga_periferal_xst.prj"
+-top vga_periferal
+-p virtex6
+-ofn "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\devl\synthesis\vga_periferal_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib vga_periferal_v1_00_a

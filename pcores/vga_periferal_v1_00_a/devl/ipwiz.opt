@@ -1,0 +1,8 @@
+-batch 
+-create vga_periferal 
+-ver 1.00.a 
+-dir "C:\materija\Ra174-2014\LPRS2\V3" 
+-lang vhdl 
+-bus axi4lite s 
+-xps 
+-ise 
