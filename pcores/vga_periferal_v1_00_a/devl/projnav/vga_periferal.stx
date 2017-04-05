@@ -78,25 +78,40 @@ Parsing architecture <imp> of entity <slave_attachment>.
 Parsing VHDL file "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\vga_top.vhd" into library work
 Parsing entity <vga_top>.
 Parsing architecture <rtl> of entity <vga_top>.
+Parsing VHDL file "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\reg.vhd" into library work
+Parsing entity <reg>.
+Parsing architecture <arch_reg> of entity <reg>.
 Parsing VHDL file "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a\hdl\vhdl\axi_lite_ipif.vhd" into library axi_lite_ipif_v1_01_a
 Parsing entity <axi_lite_ipif>.
 Parsing architecture <imp> of entity <axi_lite_ipif>.
 Parsing VHDL file "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" into library vga_periferal_v1_00_a
 Parsing entity <user_logic>.
 Parsing architecture <IMP> of entity <user_logic>.
-Parsing VHDL file "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\vga_periferal.vhd" into library vga_periferal_v1_00_a
-Parsing entity <vga_periferal>.
-Parsing architecture <IMP> of entity <vga_periferal>.
-
-
-Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.14 secs
- 
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 381: <rst_n_i> is not declared.
+ERROR:HDLCompiler:1728 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 382: Type error near direct_mode ; current type std_logic; expected type std_logic_vector
+ERROR:HDLCompiler:1728 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 383: Type error near direct_mode ; current type std_logic; expected type std_logic_vector
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 394: <next_txt_addr> is not declared.
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 395: <txt_addr_reg> is not declared.
+ERROR:HDLCompiler:192 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 395: Actual of formal out port o_q cannot be an expression
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 406: <next_txt_addr> is not declared.
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 407: <txt_addr_reg> is not declared.
+ERROR:HDLCompiler:192 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 407: Actual of formal out port o_q cannot be an expression
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 418: <next_txt_addr> is not declared.
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 419: <txt_addr_reg> is not declared.
+ERROR:HDLCompiler:192 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 419: Actual of formal out port o_q cannot be an expression
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 430: <next_txt_addr> is not declared.
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 431: <txt_addr_reg> is not declared.
+ERROR:HDLCompiler:192 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 431: Actual of formal out port o_q cannot be an expression
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 442: <next_txt_addr> is not declared.
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 443: <txt_addr_reg> is not declared.
+ERROR:HDLCompiler:192 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 443: Actual of formal out port o_q cannot be an expression
+ERROR:HDLCompiler:69 - "C:\materija\Ra174-2014\LPRS2\V3\pcores\vga_periferal_v1_00_a\hdl\vhdl\user_logic.vhd" Line 454: <next_txt_addr> is not declared.
+Sorry, too many errors..
 --> 
 
-Total memory usage is 191072 kilobytes
+Total memory usage is 189600 kilobytes
 
-Number of errors   :    0 (   0 filtered)
+Number of errors   :   19 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

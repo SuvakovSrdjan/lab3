@@ -218,6 +218,19 @@ architecture IMP of user_logic is
     );
 end component;
 
+component reg is
+	generic(
+    WIDTH    : positive := 1;
+    RST_INIT : integer := 0
+	);
+	port(
+        i_clk  : in  std_logic;
+        in_rst : in  std_logic;
+        i_d    : in  std_logic_vector(WIDTH-1 downto 0);
+        o_q    : out std_logic_vector(WIDTH-1 downto 0)
+		);
+end component;
+
 component ODDR2
   generic(
    DDR_ALIGNMENT : string := "NONE";
@@ -357,6 +370,97 @@ clk5m_inst : ODDR2
 		green_o            => green_o,
 		blue_o             => blue_o     
 	);
+	
+	direct_mode_reg: reg
+  generic map(
+		WIDTH    => 1,
+		RST_INIT => 0
+	)
+   port map(
+		i_clk  => clk_i,
+		in_rst => rst_n_i,
+		i_d    => Buss2IP_Addr(29 downto 0),
+		o_q    => direct_mode
+	);
+	
+	display_mode_reg: reg
+  generic map(
+		WIDTH    => 2,
+		RST_INIT => 0
+	)
+   port map(
+		i_clk  => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d    => next_txt_addr,
+		o_q    => txt_addr_reg
+	);
+	
+	show_frame_reg: reg
+  generic map(
+		WIDTH    => 1,
+		RST_INIT => 0
+	)
+   port map(
+		i_clk  => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d    => next_txt_addr,
+		o_q    => txt_addr_reg
+	);
+	
+	font_size_reg: reg
+  generic map(
+		WIDTH    => 4,
+		RST_INIT => 0
+	)
+   port map(
+		i_clk  => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d    => next_txt_addr,
+		o_q    => txt_addr_reg
+	);
+	
+	foreground_color_reg: reg
+  generic map(
+		WIDTH    => 24,
+		RST_INIT => 0
+	)
+   port map(
+		i_clk  => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d    => next_txt_addr,
+		o_q    => txt_addr_reg
+	);
+	
+	background_color_reg: reg
+  generic map(
+		WIDTH    => 24,
+		RST_INIT => 0
+	)
+   port map(
+		i_clk  => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d    => next_txt_addr,
+		o_q    => txt_addr_reg
+	);
+	
+	frame_color_reg: reg
+  generic map(
+		WIDTH    => 24,
+		RST_INIT => 0
+	)
+   port map(
+		i_clk  => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d    => next_txt_addr,
+		o_q    => txt_addr_reg
+	);
+
+
+
+
+
+
+
   --USER logic implementation added here
 
   ------------------------------------------
