@@ -21,7 +21,16 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="vga_periferal.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="user_logic.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="user_logic.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="user_logic.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="vga_periferal.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="vga_periferal.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="vga_periferal.xst"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
 
