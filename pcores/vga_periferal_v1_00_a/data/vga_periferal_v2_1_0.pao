@@ -15,3 +15,8 @@ lib vga_periferal_v1_00_a text_mem vhdl
 lib vga_periferal_v1_00_a vga vhdl
 lib vga_periferal_v1_00_a vga_sync vhdl
 lib vga_periferal_v1_00_a vga_top vhdl
+lib vga_periferal_v1_00_a dcm25MHz vhdl
+lib vga_periferal_v1_00_a dcm50Mhz vhdl
+lib vga_periferal_v1_00_a dcm75Mhz vhdl
+lib vga_periferal_v1_00_a dcm108Mhz vhdl
+lib vga_periferal_v1_00_a char_rom_def vhdl

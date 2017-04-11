@@ -282,7 +282,24 @@ end component;
   signal dir_green           : std_logic_vector(7 downto 0);
   signal dir_blue            : std_logic_vector(7 downto 0);
   signal dir_pixel_column    : std_logic_vector(10 downto 0);
-  signal dir_pixel_row : std_logic_vector(10 downto 0);
+  signal dir_pixel_row       : std_logic_vector(10 downto 0);
+  
+  signal direct_mode_o       :std_logic_vector(0 downto 0);
+  signal displat_mode_o      :std_logic_vector(1 downto 0);
+  signal show_frame_o		  :std_logic_vector(0 downto 0);
+  signal font_size_o			  :std_logic_vector(3 downto 0);
+  signal foreground_color_o  :std_logic_vector(23 downto 0);
+  signal background_color_o  :std_logic_vector(23 downto 0);
+  signal frame_color_o	     :std_logic_vector(23 downto 0);
+  signal iBuss2_IP_Addr	  	  :std_logic_vector(31 downto 0);
+  
+  
+  -- write enablers
+    signal textm_we : std_logic;
+	 signal graphicm_we : std_logic;
+    signal reg_we : std_logic;
+    signal enc : std_logic;
+  
 
 begin
 	message_lenght <= conv_std_logic_vector(MEM_SIZE/64, MEM_ADDR_WIDTH)when (font_size = 3) else -- note: some resolution with font size (32, 64)  give non integer message lenght (like 480x640 on 64 pixel font size) 480/64= 7.5
@@ -291,6 +308,7 @@ begin
 						conv_std_logic_vector(MEM_SIZE   , MEM_ADDR_WIDTH);
 	  
 	  graphics_lenght <= conv_std_logic_vector(MEM_SIZE*8*8, GRAPH_MEM_ADDR_WIDTH);
+	  iBuss2_IP_Addr <= not(Buss2IP_Addr);
 	  
 	  -- removed to inputs pin
 	  direct_mode <= '1';
@@ -379,9 +397,11 @@ clk5m_inst : ODDR2
    port map(
 		i_clk  => clk_i,
 		in_rst => rst_n_i,
-		i_d    => Buss2IP_Addr(29 downto 0),
-		o_q    => direct_mode
+		i_d    => Buss2IP_Data(0 downto 0),
+		o_q    => direct_mode_o
 	);
+	
+	
 	
 	display_mode_reg: reg
   generic map(
@@ -389,10 +409,10 @@ clk5m_inst : ODDR2
 		RST_INIT => 0
 	)
    port map(
-		i_clk  => pix_clock_s,
-		in_rst => vga_rst_n_s,
-		i_d    => next_txt_addr,
-		o_q    => txt_addr_reg
+		i_clk  => Bus2IP_Clk,
+		in_rst => Bus2IP_Resetn,
+		i_d    => Buss2IP_Data(1 downto 0),
+		o_q    => display_mode_o
 	);
 	
 	show_frame_reg: reg
@@ -401,10 +421,10 @@ clk5m_inst : ODDR2
 		RST_INIT => 0
 	)
    port map(
-		i_clk  => pix_clock_s,
-		in_rst => vga_rst_n_s,
-		i_d    => next_txt_addr,
-		o_q    => txt_addr_reg
+		i_clk  => Bus2IP_Clk,
+		in_rst => Bus2IP_Resetn,
+		i_d    => Buss2IP_Data(0 downto 0),
+		o_q    => show_frame_o
 	);
 	
 	font_size_reg: reg
@@ -413,10 +433,10 @@ clk5m_inst : ODDR2
 		RST_INIT => 0
 	)
    port map(
-		i_clk  => pix_clock_s,
-		in_rst => vga_rst_n_s,
-		i_d    => next_txt_addr,
-		o_q    => txt_addr_reg
+		i_clk  => Bus2IP_Clk,
+		in_rst => Bus2IP_Resetn,
+		i_d    => Buss2IP_Data(3 downto 0),
+		o_q    => font_size_o
 	);
 	
 	foreground_color_reg: reg
@@ -425,10 +445,10 @@ clk5m_inst : ODDR2
 		RST_INIT => 0
 	)
    port map(
-		i_clk  => pix_clock_s,
-		in_rst => vga_rst_n_s,
-		i_d    => next_txt_addr,
-		o_q    => txt_addr_reg
+		i_clk  => Bus2IP_Clk,
+		in_rst => Bus2IP_Resetn,
+		i_d    => Buss2IP_Data(23 downto 0),
+		o_q    => foreground_color_o
 	);
 	
 	background_color_reg: reg
@@ -437,10 +457,10 @@ clk5m_inst : ODDR2
 		RST_INIT => 0
 	)
    port map(
-		i_clk  => pix_clock_s,
-		in_rst => vga_rst_n_s,
-		i_d    => next_txt_addr,
-		o_q    => txt_addr_reg
+		i_clk  => Bus2IP_Clk,
+		in_rst => Bus2IP_Resetn,
+		i_d    => Buss2IP_Data(23 downto 0),
+		o_q    => background_color_o
 	);
 	
 	frame_color_reg: reg
@@ -449,15 +469,20 @@ clk5m_inst : ODDR2
 		RST_INIT => 0
 	)
    port map(
-		i_clk  => pix_clock_s,
-		in_rst => vga_rst_n_s,
-		i_d    => next_txt_addr,
-		o_q    => txt_addr_reg
+		i_clk  => Bus2IP_Clk,
+		in_rst => Bus2IP_Resetn,
+		i_d    => Buss2IP_Data(23 downto 0),
+		o_q    => frame_color_o
 	);
 
 
 
-
+ message_lenght <= conv_std_logic_vector(MEM_SIZE/64, MEM_ADDR_WIDTH)when (font_size = 3) else -- note: some resolution with font size (32, 64)  give non integer message lenght (like 480x640 on 64 pixel font size) 480/64= 7.5
+                    conv_std_logic_vector(MEM_SIZE/16, MEM_ADDR_WIDTH)when (font_size = 2) else
+                    conv_std_logic_vector(MEM_SIZE/4 , MEM_ADDR_WIDTH)when (font_size = 1) else
+                    conv_std_logic_vector(MEM_SIZE   , MEM_ADDR_WIDTH);
+  
+graphics_lenght <= conv_std_logic_vector(MEM_SIZE*8*8, GRAPH_MEM_ADDR_WIDTH);
 
 
 
